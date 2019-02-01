@@ -1,0 +1,96 @@
+/*自动重合闸设置*/
+.contentTop{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+/*输入框位置的大盒子*/
+.topInput{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: .19rem;
+}
+.topInput div{
+    margin-bottom: .16rem;
+}
+/*输入框*/
+.topInput input{
+    width: 3.4rem;
+    height: .44rem;
+    margin-left: .19rem;
+    padding-left:.28rem ;
+    border: 1px solid rgba(195,198,210,1);
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+    line-height:16px;
+}
+.topInput div label{
+    font-size:18px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+    line-height:16px;
+}
+/*输入框位置按钮*/
+.content-button{
+    width: 100%;
+    margin-top: 1.34rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: .5rem;
+    margin-bottom: .4rem;
+}
+.content-button button{
+    width:1.20rem;
+    height:.44rem;
+    background:rgba(191,191,191,1);
+    border-radius:4px;
+    border: none;
+    font-size:22px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    margin-left: .08rem;
+}
+.content-button button:nth-of-type(1){
+    background:rgba(106,204,117,1);
+}
+
+/*参数*/
+.parameter table{
+    width: 96%;
+    text-align: center;
+    border:1px solid rgba(229,231,238,1);
+    border-radius:.12rem;
+    margin-bottom: 1.42rem;
+}
+.parameter table th{
+    background:rgba(229,231,238,1);
+    height: .44rem;
+    font-size:18px;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+}
+.parameter table th:nth-of-type(1){
+    border-top-left-radius:.12rem;
+}
+.parameter table th:nth-of-type(5){
+    border-top-right-radius:.12rem;
+}
+.parameter table td{
+    height: .71rem;
+    font-size:22px;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+    line-height:16px;
+    border-right: 1px solid rgba(229,231,238,1);
+}
+.parameter table td:nth-of-type(5){
+    border-right:none;
+}
+
+

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/inregardto.css">
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <div class="left"></div>
+
+        <div class="right">
+            <div class="icon">
+                <a href="./warning.html" class="warn"></a>
+                <a href="./help.html" class="help"></a>
+                <a href="./inregardto.html" class="about"></a>
+            </div>
+            <div class="settings">
+
+                <a href="#" class="user"></a>
+
+                <p class="username">Admin</p>
+
+                <a href="#" class="down"></a>
+                <div class="popUpBox">
+                    <a href="./resetpasswords.html" class="reset">
+                        <img src="../images/reset.png" alt="">
+                        <p class="replacement">重置密码</p>
+                    </a>
+                    <a href="./login.html" class="close">
+                        <img src="../images/close.png" alt="">
+                        <p class="out">退出登录</p>
+                    </a>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--版心-->
+    <div class="center">
+        <!--导航-->
+        <ul class="nav">
+            <li>
+                <a href="./login.html">
+                    <p class="iconfont">&#xe628</p>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="./network.html">
+                    <p class="iconfont">&#xe608</p>
+                    <span>网络设置</span>
+                </a>
+            </li>
+            <li>
+                <a href="./controller.html">
+                    <p class="iconfont">&#xe637</p>
+                    <span>控制器</span>
+                </a>
+            </li>
+            <li>
+                <a href="./vidicon.html">
+                    <p class="iconfont">&#xe60e</p>
+                    <span>摄像机</span>
+                </a>
+            </li>
+            <li>
+                <a href="./LED.html">
+                    <p class="iconfont">&#xe6ee</p>
+                    <span>补光灯</span>
+                </a>
+            </li>
+            <li>
+                <a href="./superposition.html">
+                    <p class="iconfont">&#xea2d</p>
+                    <span>自动重合闸</span>
+                </a>
+            </li>
+            <li>
+                <a href="./operationlog.html">
+                    <p class="iconfont">&#xe63b</p>
+                    <span>操作日志</span>
+                </a>
+            </li>
+        </ul>
+        <div class="centerRight">
+            <!--版心头部图标-->
+            <div class="centerHeader">
+                <div class="clientSide">
+                    LDSC04客户端系统
+                </div>
+            </div>
+            <!--版心内容区域-->
+            <div class="content">
+                <header class="title">
+                    关于
+                </header>
+                <div>
+                    <button>更新</button>
+                    <p>暂未发现新版本</p>
+                </div>
+                <div>
+                    <button class="upFile">上传</button>
+                    <p class="aim"><img src="../images/checkIcon2.png" alt="" class="aimImg" onclick="remove()"></p>
+                    <input type="file" id="uploadFile" onchange="addFile()">
+                </div>
+                <div class="parameter">
+                    <table cellspacing="0" cellpadding="0" id="show">
+                        <tr>
+                            <th>设备ID</th>
+                            <th>设备型号</th>
+                            <th>售后电话</th>
+                            <th>mac</th>
+                        </tr>
+
+                    </table>
+                    <div class="tableText">
+                        <h2>
+                            版权说明
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="bottomText">软件版权归属权限</p>
+</div>
+<div class="mark"></div>
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/rem.js"></script>
+<script>
+    $(".upFile").on("click",function(){
+       $("#uploadFile").click()
+    });
+    //上传文件
+    function addFile(){
+        let add = $("#uploadFile").val().split("\\");
+        $(".aim").prepend('<span>'+add[add.length-1]+'</span>');
+        $(".aimImg").css("opacity",1);
+    }
+    //删除上传文件
+    function remove() {
+        $("#uploadFile").val("");
+        $(".aim>span").remove();
+        $(".aimImg").css("opacity",0);
+    }
+    //获取版本
+    const  versions = "LDSC04 1.1.1";
+    $('.title').after('<h2 class="versions">当前版本号：'+versions+'版本</h2>');
+
+
+    //渲染数据
+    $(function() {
+        //模拟数据
+        const list = [{ip: "温度", type: "频率", text: "电压", time: "ups12v"},
+        ];
+        let html = '';
+        let num = list.length;
+        if (list.length === -1) {
+            alert("没有数据")
+        }
+        for (let i = 0; i < list.length; i++) {//循环json对象，拼接tr,td的html
+            html = html + '<tr>' + '<td>' + list[i].ip + '</td>' + '<td>' + list[i].type + '</td>' + '<td>' + list[i].text + '</td>' + '<td>' + list[i].time + '</td>'  + '</tr>';
+        }
+        $('#show').append(html);
+    });
+    //版权说明
+    const text = "版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明版权说明";
+    $('.tableText').append("<p>"+text+"</p>");
+</script>
+</html>

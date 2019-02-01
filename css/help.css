@@ -1,0 +1,31 @@
+/*内容区域*/
+.details{
+    display: flex;
+    flex-direction: column;
+    margin-right: .28rem;
+}
+
+/*头部*/
+.details h4{
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+    line-height: 20px;
+    margin-bottom: .18rem;
+}
+/*文本*/
+.details p{
+    font-size:18px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(170,173,184,1);
+    line-height: 24px;
+}
+/*图片*/
+.contentImg{
+    margin: .23rem 0;
+    width: 100%;
+    background: #cccccc;
+    height: 4.03rem;
+}

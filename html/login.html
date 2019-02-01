@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆</title>
+    <link href="../css/login.css" rel="stylesheet">
+    <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body style="background-color: #229EFE;display: flex;align-items:center;height: 100%;">
+
+    <img src="../images/logo.png" draggable="false" class="logoImg" />
+    <img src="../images/circleBg.png" draggable="false" class="circleBgImg" />
+    <div style="width: 100%;">
+
+        <div style="position: relative;top: 40px;text-align: center">
+            <img src="../images/loginHead.png" style="width: 685px;" draggable="false" />
+        </div>
+        <div class="centerDiv">
+            <div class="systemName">
+                LDSC04客户端系统
+            </div>
+            <div class="loginNameDiv">
+                <div class="EnglishName">Lon in</div>
+                <div class="ChineseName">登陆</div>
+            </div>
+            <div class="loginText">
+                <div class="userName">
+                    <input placeholder="账号" id="user">
+                </div>
+                <div class="passWord">
+                    <input placeholder="密码" type="password" id="psw">
+                </div>
+                <div class="loginBtn" onclick="commit()">
+                    <div>
+                        登陆
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="waveDiv">
+            <div>
+                <div style="box-shadow: 0px 41px 20px 14px rgba(0,68,120,0.2)">
+                    <img src="../images/wave.png" style="width: 1920px;" draggable="false" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    //点击提交数据
+    commit = () => {
+        const User = $("#psw").val();
+        const Psw = $("#user").val();
+        console.log(User,Psw);
+        $(location).attr('href', './network.html');
+    }
+</script>
+</html>

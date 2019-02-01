@@ -1,0 +1,159 @@
+.title{
+    margin-bottom: .28rem;
+}
+/* 摄像机 状态区域*/
+.card{
+    display: flex;
+    justify-content: space-between;
+    padding-right: .28rem;
+    flex-wrap: wrap;
+    margin-bottom: .38rem;
+}
+/*中心*/
+.cardCnt{
+    box-sizing:border-box;
+    width: 49%;
+    min-height:2.23rem ;
+    display: flex;
+    flex-wrap: wrap;
+    border:1px solid rgba(229,231,238,1);
+}
+.cardCnt:nth-of-type(3),.cardCnt:nth-of-type(4){
+    margin-top: .17rem;
+}
+/*摄像机标题*/
+.card h5{
+    font-size:18px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+    width: 100%;
+    margin-left: .18rem;
+    height: .18rem;
+}
+/*摄像机left区域*/
+.cardLeft{
+    display: flex;
+    align-items: center;
+    margin-top: .1rem;
+}
+.cardLeft p{
+    font-size:14px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+    margin-left: .21rem;
+}
+.cardLeft input{
+    width: 1.41rem;
+    height: .2rem;
+    text-align: center;
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+}
+.cardLeft img{
+    width: .19rem;
+    height: .19rem;
+}
+/*右边 按钮区域*/
+.cardRight{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+    margin-top: .08rem;
+    margin-right: .12rem;
+}
+.onOff{
+    width: 1.08rem;
+    height: .34rem;
+    background: url("../images/ON.png") no-repeat center;
+    background-size:100% 100%;
+    border-radius:17px;
+}
+.cardRight p{
+    font-size:14px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+    margin-right: .19rem;
+}
+/*底部*/
+.cardBottom{
+    margin-top: .16rem;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+/*显示上行下行位置数据*/
+.data{
+    width: 2.34rem;
+    height: 1.44rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-end;
+}
+.data div{
+    box-sizing:border-box;
+    width: 50%;
+    height: 50%;
+    border:1px solid rgba(229,231,238,1);
+    background:rgba(34,158,254,0.1);
+    text-align: center;
+
+}
+.data div:nth-of-type(3),.data div:nth-of-type(4){
+    height: 51%;
+}
+.data div span{
+    display: block;
+    margin: .11rem 0;
+    font-size:14px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(132,137,154,1);
+    line-height:16px;
+}
+.data div p{
+    font-size:22px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+    line-height:16px;
+}
+
+/*底部表格*/
+.parameter{
+    padding-right: .28rem;
+    padding-bottom: .36rem;
+}
+
+.parameter table{
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(229,231,238,1);
+    border-right:none ;
+}
+.parameter table th{
+    background:rgba(229,231,238,1);
+    height: .44rem;
+    font-size:18px;
+    font-weight:400;
+    color:rgba(132,137,154,1)
+}
+.parameter table td{
+    height: .71rem;
+    font-size:22px;
+    font-weight:400;
+    color:rgba(46,52,78,1);
+    line-height:16px;
+    border: 1px solid rgba(229,231,238,1);
+}
+.parameter tr:nth-child(odd){
+
+    background:rgba(34,158,254,0.04);
+
+}

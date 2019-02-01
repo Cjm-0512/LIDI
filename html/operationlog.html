@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作日志</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/operationlog.css">
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <div class="left"></div>
+
+        <div class="right">
+            <div class="icon">
+                <a href="./warning.html" class="warn"></a>
+                <a href="./help.html" class="help"></a>
+                <a href="./inregardto.html" class="about"></a>
+            </div>
+            <div class="settings">
+
+                <a href="#" class="user"></a>
+
+                <p class="username">Admin</p>
+
+                <a href="#" class="down"></a>
+                <div class="popUpBox">
+                    <a href="./resetpasswords.html" class="reset">
+                        <img src="../images/reset.png" alt="">
+                        <p class="replacement">重置密码</p>
+                    </a>
+                    <a href="./login.html" class="close">
+                        <img src="../images/close.png" alt="">
+                        <p class="out">退出登录</p>
+                    </a>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--版心-->
+    <div class="center">
+        <!--导航-->
+        <ul class="nav">
+            <li>
+                <a href="./login.html">
+                    <p class="iconfont">&#xe628</p>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="./network.html">
+                    <p class="iconfont">&#xe608</p>
+                    <span>网络设置</span>
+                </a>
+            </li>
+            <li>
+                <a href="./controller.html">
+                    <p class="iconfont">&#xe637</p>
+                    <span>控制器</span>
+                </a>
+            </li>
+            <li>
+                <a href="./vidicon.html">
+                    <p class="iconfont">&#xe60e</p>
+                    <span>摄像机</span>
+                </a>
+            </li>
+            <li>
+                <a href="./LED.html">
+                    <p class="iconfont">&#xe6ee</p>
+                    <span>补光灯</span>
+                </a>
+            </li>
+            <li>
+                <a href="./superposition.html">
+                    <p class="iconfont">&#xea2d</p>
+                    <span>自动重合闸</span>
+                </a>
+            </li>
+            <li  class="public">
+                <a href="./operationlog.html">
+                    <p class="iconfont">&#xe63b</p>
+                    <span>操作日志</span>
+                </a>
+            </li>
+        </ul>
+        <div class="centerRight">
+            <!--版心头部图标-->
+            <div class="centerHeader">
+                <div class="clientSide">
+                    LDSC04客户端系统
+                </div>
+            </div>
+            <!--版心内容区域-->
+            <div class="content">
+                <header class="title">
+                    <h3 class="action operationLog">
+                        操作日志
+                    </h3>
+                    <h3 class="toLog">
+                        登录日志
+                    </h3>
+                </header>
+                <div class="parameter">
+                    <table cellspacing="0" cellpadding="0" id="show">
+                        <tr>
+                            <th>用户人IP</th>
+                            <th>操作类型</th>
+                            <th>操作内容</th>
+                            <th>操作时间</th>
+                            <th>操作日MAC</th>
+                        </tr>
+                    </table>
+                    <table cellspacing="0" cellpadding="0" id="show1">
+                        <tr>
+                            <th>用户名</th>
+                            <th>登录时间</th>
+                            <th>退出时间</th>
+                        </tr>
+                    </table>
+                </div>
+                <div id="ele">
+                    <div class="Pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="bottomText">软件版权归属权限</p>
+</div>
+<div class="mark"></div>
+</body>
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/rem.js"></script>
+<script src="../js/sorter.js"></script>
+
+<script>
+    //初始化页面
+    $(function() {// 初始化内容
+        $("#show1").hide();
+        getState();
+    });
+    //切换
+    const h3s = $(".title>h3");
+    h3s.on("click",function(){
+        $(this).addClass("action").siblings().removeClass();
+    });
+    // 切换数据
+    $(".toLog").on('click',function(){
+        $("#show").hide();
+        $("#show1").show();
+        //这里重新想后台获取数据，进行赋值
+        // logList = [];
+        html = "";
+        getLog()
+    });
+    $(".operationLog").on('click',function(){
+        $("#show1").hide();
+        $("#show").show();
+        //这里重新获取数据，赋值
+        // list = [];
+        html = "";
+        getState()
+    });
+    //模拟操作日志数据
+    let list = [{ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+        {ip:"用户人IP",type:"操作类型",text:"操作内容",time:"操作时间",day:"操作日MAC"},
+    ];
+    //模拟登录日志数据
+    let logList = [
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+        {ip:"用户名",type:"操作事件",time:"退出时间"},
+    ];
+
+    let html = '';
+    //渲染数据
+    function getState(){
+        let num = list.length;
+        let pagination = 0;
+        if(num <= 10){
+            pagination = 1;
+        }else {
+            pagination = num/10;
+        }
+        if(list.length === -1){
+            alert("没有数据")
+        }
+        for ( let i = 0; i < num;i ++) {//循环json对象，拼接tr,td的html
+            html = html + '<tr>'+'<td>' + list[i].ip + '</td>' + '<td>' + list[i].type + '</td>' + '<td>' + list[i].text + '</td>'+ '<td>' + list[i].time + '</td>'+ '<td>' + list[i].day + '</td>'+'</tr>';
+        }
+        $('#show').append(html);
+        //底部分页
+        Pagination({
+            ele: '#ele', // 父div的id或者类名，支持css选择器（实际上只是把ele传进jq的选择器中）
+            totalCount: num, // 总数据条数
+            totalPage: pagination, // 总页数
+            currentPage: 1, // 初始化选中的页数
+            needTotalCount: true, // 是否显示总页数的提示
+            callback: function(page) {
+                console.log('当前是第' + page + '页') // 每次跳转页码时执行的回调函数，会传入当前页码,在这里可以进行一个分页的请求
+            }
+        });
+    }
+
+    //模拟登录数据
+    function getLog(){
+        let pagination1 = 0;
+        let num1 = logList.length;
+        if(num1 <= 10){
+            pagination1 = 1;
+        }else {
+            pagination1= num1/10;
+        }
+        if(list.length === -1){
+            alert("没有数据")
+        }
+        for ( let i = 0; i <num1;i ++) {//循环json对象，拼接tr,td的html
+            html = html + '<tr>'+'<td>' + logList[i].ip + '</td>' + '<td>' + logList[i].type + '</td>' + '<td>' + logList[i].time + '</td>'+'</tr>';
+        }
+        $('#show1').append(html);
+        //底部分页
+        Pagination({
+            ele: '#ele', // 父div的id或者类名，支持css选择器（实际上只是把ele传进jq的选择器中）
+            totalCount: num1, // 总数据条数
+            totalPage: pagination1, // 总页数
+            currentPage: 1, // 初始化选中的页数
+            needTotalCount: true, // 是否显示总页数的提示
+            callback: function(page) {
+                console.log('当前是第' + page + '页') // 每次跳转页码时执行的回调函数，会传入当前页码,在这里可以进行一个分页的请求
+            }
+        });
+    }
+
+</script>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网络设置</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/network.css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="../js/rem.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="header">
+        <div class="left"></div>
+
+        <div class="right">
+            <div class="icon">
+                <a href="./warning.html" class="warn"></a>
+                <a href="./help.html" class="help"></a>
+                <a href="./inregardto.html" class="about"></a>
+            </div>
+            <div class="settings">
+
+                <a href="#" class="user"></a>
+
+                <p class="username">Admin</p>
+
+                <a href="#" class="down"></a>
+                <div class="popUpBox">
+                    <a href="./resetpasswords.html" class="reset">
+                        <img src="../images/reset.png" alt="">
+                        <p class="replacement">重置密码</p>
+                    </a>
+                    <a href="./login.html" class="close">
+                        <img src="../images/close.png" alt="">
+                        <p class="out">退出登录</p>
+                    </a>
+                    <div class="triangle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--版心-->
+    <div class="center">
+        <!--导航-->
+        <ul class="nav">
+            <li>
+                <a href="./login.html">
+                    <p class="iconfont">&#xe628</p>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li  class="public">
+                <a href="./network.html">
+                    <p class="iconfont">&#xe608</p>
+                    <span>网络设置</span>
+                </a>
+            </li>
+            <li>
+                <a href="./controller.html">
+                    <p class="iconfont">&#xe637</p>
+                    <span>控制器</span>
+                </a>
+            </li>
+            <li>
+                <a href="./vidicon.html">
+                    <p class="iconfont">&#xe60e</p>
+                    <span>摄像机</span>
+                </a>
+            </li>
+            <li>
+                <a href="./LED.html">
+                    <p class="iconfont">&#xe6ee</p>
+                    <span>补光灯</span>
+                </a>
+            </li>
+            <li>
+                <a href="./superposition.html">
+                    <p class="iconfont">&#xea2d</p>
+                    <span>自动重合闸</span>
+                </a>
+            </li>
+            <li>
+                <a href="./operationlog.html">
+                    <p class="iconfont">&#xe63b</p>
+                    <span>操作日志</span>
+                </a>
+            </li>
+        </ul>
+        <div class="centerRight">
+            <!--版心头部图标-->
+            <div class="centerHeader">
+                <div class="clientSide">
+                    LDSC04客户端系统
+                </div>
+            </div>
+            <!--版心内容区域-->
+            <div class="content">
+                <header class="title">
+                    网络设置
+                </header>
+                <form>
+                    <div class="inputText Ip">
+                        <label for="targetIp">连接目标IP</label>
+                        <input type="text" id="targetIp" placeholder="192.168.70.102" value="192.168.70.102">
+                        <p class="checkIcon"></p>
+                        <div class="loserIcon">
+                            <img src="../images/checkIcon2.png" alt="">
+                            <p>输入格式错误</p>
+                        </div>
+                    </div>
+                    <div class="inputText">
+                        <label for="targetPort">连接目标端口</label>
+                        <input type="text" id="targetPort" placeholder="123456" value="123456"/>
+                        <img src="../images/lock.png" alt="" class="lock lock1">
+                    </div>
+                    <div class="inputText">
+                        <label for="reportFrequency">上报频率(秒)</label>
+                        <input type="text" id="reportFrequency" placeholder="12" value="12"/>
+                        <img src="../images/lock.png" alt="" class="lock lock2">
+                    </div>
+                    <div class="inputText">
+                        <label for="bookIPV4">本地IPV4</label>
+                        <input type="text" id="bookIPV4"  placeholder="192.168.70.102" value="192.168.70.102"/>
+                    </div>
+                    <div class="inputText">
+                        <label for="subnetMask">子网掩码</label>
+                        <input type="text" id="subnetMask" placeholder="123456" value="123456"/>
+                        <p class="checkIcon2"></p>
+                        <div class="loserIcon2">
+                            <img src="../images/checkIcon2.png" alt="">
+                            <p>输入格式错误</p>
+                        </div>
+                    </div>
+                    <div class="inputText">
+                        <label for="gatewayIPV4">网关IPV4</label>
+                        <input type="text" id="gatewayIPV4" placeholder="192.168.70.10" value="192.168.70.10"/>
+                    </div>
+                    <div class="inputText">
+                        <label for="dns">dns</label>
+                        <input type="text" id="dns" placeholder="12" value="12"/>
+                    </div>
+                </form>
+                <div  class="submitForm">
+                    <button class="save">保存</button>
+                    <button class="donT">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="SetupFailed">
+            <p>
+                设置失败
+            </p>
+        </div>
+    </div>
+    <p class="bottomText">软件版权归属权限</p>
+</div>
+<div class="mark"></div>
+</body>
+<script src="../js/common.js"></script>
+<script src="../js/network.js"></script>
+</html>

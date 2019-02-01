@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select:none;
+
+    -moz-user-select:none;
+
+    -ms-user-select:none;
+
+    user-select:none;
+}
+html,body{
+    height:100%;
+    width: 100%;
+}
+
+.centerDiv{
+    width: 650px;
+    height: 463px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 35px;
+    box-shadow: 0 13px 9px 13px rgba(0, 68, 120, 0.2);
+}
+
+.waveDiv{
+    width: 100%;
+    margin-top: -66px;
+}
+.waveDiv > div {
+    overflow: hidden;
+    background: transparent!important;
+    width: 679px!important;
+}
+.waveDiv div {
+    width: 650px;
+    margin: 0 auto;
+    background: white;
+    height: 151px;
+}
+.waveDiv img{
+    width: 100%;
+    position: fixed;
+    left: 0;
+}
+
+.systemName{
+    font-size: 20px;
+    background-color: #229EFE;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 44px;
+    line-height: 44px;
+    color: #ffffff;
+    font-family: 微软雅黑;
+    position: absolute;
+    margin-left: 437px;
+    margin-top: -39px;
+}
+
+/*登录标题*/
+.loginNameDiv{
+    width: 100%;
+    float: left;
+}
+.loginNameDiv > .EnglishName{
+    color:#229EFE;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+.loginNameDiv > .ChineseName{
+    color: #4B4E5A;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 19px;
+}
+
+  /*登录框*/
+.loginText{
+    width: 100%;
+    float: left;
+}
+.loginText > .passWord{
+    margin-top: 14px;
+    height: 100%;
+    text-align: center;
+}
+.loginText > .userName{
+    height: 100%;
+    text-align: center;
+    margin-top: 28px;
+}
+.loginText > .loginBtn{
+    height: 100%;
+    text-align: center;
+    margin-top: 36px;
+}
+.loginText input{
+    width: 70%;
+    height: 58px;
+    border: 1px solid #C3C6D2;
+    outline: none;
+    text-align: center;
+    font-size: 24px;
+    color: #84899A;
+}
+.loginText input:hover,.loginText input:focus{
+    border: 1px solid #229EFE;
+}
+
+.loginText > .loginBtn div{
+    width: 70%;
+    margin: auto;
+    height: 78px;
+    color: #ffffff;
+    border: 0;
+    line-height: 58px;
+    background: url("../images/submit.png");
+    background-size: 100% 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.logoImg{
+    position: fixed;
+    left: 10px;
+    top: 10px;
+
+    z-index: -1;
+}
+
+.circleBgImg{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    z-index: -1;
+}
